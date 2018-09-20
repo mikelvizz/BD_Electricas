@@ -3,8 +3,6 @@ from elasticsearch import Elasticsearch
 import datetime, json, requests, time
 
 
-count = 0
-
 for i in range(10):
 
 ## Conectarse al contador electronico y obtener los datos de consumo.
