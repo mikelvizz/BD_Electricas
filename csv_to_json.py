@@ -7,6 +7,3 @@ print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())+' '+str(
 
 watt2 = iber.icpstatus("mvizcay@gmail.com","2Dejulio")
 print(watt2)
-
-watt3 = iber.contracts("mvizcay@gmail.com","2Dejulio")
-print(watt3)
