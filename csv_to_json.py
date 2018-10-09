@@ -1,9 +1,11 @@
-from oligo import iber
-import datetime
+import csv
+import json
 
+csvfile = open('Consumo_facturado_2017_2018.csv', 'r')
+jsonfile = open('file2.json', 'w')
 
-watt = iber.watthourmeter("mvizcay@gmail.com","2Dejulio")
-print('Timestamp: {:%Y-%m-%d %H:%M:%S}'.format(datetime.datetime.now())+' '+str(watt))
-
-watt2 = iber.icpstatus("mvizcay@gmail.com","2Dejulio")
-print(watt2)
+fieldnames = ("CUPS","Fecha","Hora","Consumo_KWh","Metodo_Obtencion")
+reader = csv.DictReader(csvfile, fieldnames)
+for row in reader:
+    json.dump(row, jsonfile)
+    jsonfile.write('\n')
